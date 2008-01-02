@@ -10,6 +10,7 @@ License: GPL style
 Group: Monitoring
 URL: ftp://vic.cc.purdue.edu:/pub/tools/unix/lslk/
 Source: ftp://vic.cc.purdue.edu/pub/tools/unix/lslk/lslk_%{version}_W.tar.bz2
+Buildroot: %_tmppath/%name-buildroot
 
 %description
 Lslk is a lock file lister.  Lslk attempts to list all of the locks on
