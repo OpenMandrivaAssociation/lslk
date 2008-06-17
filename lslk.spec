@@ -1,6 +1,6 @@
 %define name lslk
 %define version 1.29
-%define release %mkrel 8
+%define release %mkrel 9
 
 Summary: A lock file lister
 Name: %name
