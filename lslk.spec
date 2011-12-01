@@ -29,16 +29,16 @@ tar xf lslk_%version.tar
 %make DEBUG="$RPM_OPT_FLAGS" CFGF=-DLINUXV=228
 
 %install
-rm -rf $RPM_BUILD_ROOT
-mkdir -p $RPM_BUILD_ROOT%_sbindir
-mkdir -p $RPM_BUILD_ROOT%_mandir/man8
+rm -rf %{buildroot}
+mkdir -p %{buildroot}%_sbindir
+mkdir -p %{buildroot}%_mandir/man8
 
 [ -d lslk_%version ] && cd lslk_%version
-install -s lslk $RPM_BUILD_ROOT%_sbindir
-install lslk.8 $RPM_BUILD_ROOT%_mandir/man8/
+install -s lslk %{buildroot}%_sbindir
+install lslk.8 %{buildroot}%_mandir/man8/
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %files
 %defattr(644,root,root,755)
