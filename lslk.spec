@@ -1,16 +1,13 @@
-%define name lslk
-%define version 1.29
-%define release %mkrel 15
-
 Summary: A lock file lister
-Name: %name
-Version: %version
-Release: %release
+Name:    lslk
+Version: 1.29
+Release: 16
 License: GPL style
 Group: Monitoring
 URL: ftp://vic.cc.purdue.edu:/pub/tools/unix/lslk/
 Source: ftp://vic.cc.purdue.edu/pub/tools/unix/lslk/lslk_%{version}_W.tar.bz2
-Buildroot: %_tmppath/%name-buildroot
+
+%define debug_package %{nil}
 
 %description
 Lslk is a lock file lister.  Lslk attempts to list all of the locks on
@@ -29,22 +26,18 @@ tar xf lslk_%version.tar
 %make DEBUG="$RPM_OPT_FLAGS" CFGF=-DLINUXV=228
 
 %install
-rm -rf $RPM_BUILD_ROOT
-mkdir -p $RPM_BUILD_ROOT%_sbindir
-mkdir -p $RPM_BUILD_ROOT%_mandir/man8
+mkdir -p %{buildroot}%{_sbindir}
+mkdir -p %{buildroot}%{_mandir}/man8
 
 [ -d lslk_%version ] && cd lslk_%version
-install -s lslk $RPM_BUILD_ROOT%_sbindir
-install lslk.8 $RPM_BUILD_ROOT%_mandir/man8/
-
-%clean
-rm -rf $RPM_BUILD_ROOT
+install -s lslk %{buildroot}%{_sbindir}
+install lslk.8 %{buildroot}%{_mandir}/man8/
 
 %files
 %defattr(644,root,root,755)
 # XXX should be mode 4755, but for now leave the setuid off
-%attr(0755,root,kmem) %_sbindir/lslk
-%_mandir/man8/lslk.8*
+%attr(0755,root,kmem) %{_sbindir}/lslk
+%{_mandir}/man8/lslk.8*
 
 
 
