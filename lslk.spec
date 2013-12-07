@@ -1,7 +1,7 @@
 Summary:	A lock file lister
 Name:		lslk
 Version:	1.29
-Release:	19
+Release:	20
 License:	GPL style
 Group:		Monitoring
 Url:		ftp://vic.cc.purdue.edu:/pub/tools/unix/lslk/
