@@ -28,7 +28,7 @@ tar xf lslk_%{version}.tar
 %build
 [ -d lslk_%{version} ] && cd lslk_%{version}
 ./Configure -n linux
-%make DEBUG="%{optflags}" CFGF=-DLINUXV=228
+%make CC=%{__cc} DEBUG="%{optflags}" CFGF=-DLINUXV=228
 
 %install
 mkdir -p %{buildroot}%{_sbindir}
