@@ -7,6 +7,7 @@ Group:		Monitoring
 Url:		ftp://vic.cc.purdue.edu:/pub/tools/unix/lslk/
 Source0:	ftp://vic.cc.purdue.edu/pub/tools/unix/lslk/lslk_%{version}_W.tar.bz2
 
+BuildRequires:	make
 %description
 Lslk is a lock file lister.  Lslk attempts to list all of the locks on
 the executing system's local files (i.e., on the active inodes).
